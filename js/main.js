@@ -166,3 +166,106 @@ const getUsers = () => {
     });
     return dbUsers
 }
+
+const getUser = (userId) => {
+    let newUser = {};
+    let users = getUsers();
+    for (key in users) {
+      if (users[key].userId == userId) {
+        newUser["userName"] = users[key].userName;
+        newUser["photo"] = users[key].photo;
+        newUser["userId"] = users[key].userId;
+      }
+    }
+    return newUser
+}
+
+const getUserLogin = () => {
+    let newUser = {};
+    let users = getUsers();
+    for (key in users) {
+      if (users[key].login == "1") {
+        newUser["userName"] = users[key].userName;
+        newUser["photo"] = users[key].photo;
+        newUser["userId"] = users[key].userId;
+        newUser["key"] = key;
+      }
+    }
+    $("#change-user option[value=" + newUser.key + "]").attr("selected", true);
+    return newUser;
+};  
+
+const printPosts = (postsArray) => {
+    postsArray.forEach((post, index) => {
+      //clean posts wrapper
+      //$('#posts-wrapper .card').remove();
+      let userContainerId = Date.now();
+      $("#posts-wrapper").prepend(
+        `   
+        <div class="card my-card-article mt-0 mb-sm-1 mb-lg-3" >
+                        <a href="article.html">
+                            <img src="${post.data.coverUrl}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="avatar-post p-3 d-flex">
+                            <a href=""><img class="rounded-circle border jb-img-avatar" src="${post.data.coverUrl}" alt="antdp425 profile" loading="lazy"></a>
+                            <a href="" class="text-avatar-post ">
+                                <p class="f-14 mb-0">Renaissance Engineer</p>
+                                <p class="f-12">${post.data.creationDate}</p>
+                            </a>
+                        </div>
+                        <div class="">
+                            <a href="article.html">
+                                <h3 class="title-articleFull font-weight-bold">
+                                ${post.data.title}                                
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="mention-article mt-2 mb-2">
+                            <a class="yellow p-1 rounded" href="">#webdev</a>
+                            <a class="ml-1 blue mr-1 p-1 rounded" href="">#career</a>
+                            <a class="green p-1 rounded" href="">#beginners</a>
+                        </div>
+                        <div class="d-flex likes inside-article justify-content-between m-2 p-0">
+                            <div class="d-inline-flex align-items-center">
+                                <a class="d-flex likes-hover align-items-end" href="">
+                                    <svg class="crayons-icon mb-1" width="24px" height="24px"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z">
+                                        </path>
+                                    </svg>
+                                    <h4 class="ml-1 mr-1">200 </h4>
+                                    <h3 class="mr-2">reactions</h3>
+                                </a>
+                                <a class="d-flex likes-hover align-items-end" href="">
+                                    <svg class="crayons-icon mb-1" width="24px" height="24px"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
+                                        </path>
+                                    </svg>
+                                    <h4 class="ml-1 mr-1">10 </h4>
+                                    <h3 class="mr-2">comments</h3>
+                                </a>
+                            </div>
+                            <a class="d-flex align-items-baseline" href="">
+                                <h5 class="">2 min read</h5>
+                                <button class="button rounded ml-2">Save</button>
+                            </a>
+                        </div>
+                    </div> 
+        `
+      );
+      //-----let repliesObject = printReplies(post.data.postId);
+      //print user
+      //-----let userinfo = printUser(post.data.userId);
+      //-----$(`#${userContainerId}`).append(userinfo);
+    });
+  };
+  printPosts(getPosts());
+
+const goAddUser = () => {
+    $(location).attr("href", "/views/addPost.html")
+}
+
+$("#go-write-post").click(goAddUser)

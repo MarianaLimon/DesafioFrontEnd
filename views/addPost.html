@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="../images/logo_dev.png"/>
+    <link href="https://fonts.google.com/specimen/Public+Sans">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>New Post - DEV Community</title>
+</head>
+<body>
+
+    <!--Menu Principal-->
+    <nav class="navbar main-menu navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container px-0">
+            <button class="navbar-toggler px-0 d-md-none" type="button" data-toggle="collapse" data-target="" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- data-target="#navbarSupportedContent" -->
+            <a class="navbar-brand" href="../index.html"><img src="../images/logo_dev.png" alt="" class="logo-navbar"></a> 
+            
+            <input class="form-control mr-sm-2 search-bar d-none d-md-block d-lg-none" type="search" placeholder="Search..." aria-label="Search">      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline my-2 my-lg-0">
+<!--                     <input class="form-control mr-sm-2 search-bar d-none d-lg-block" type="search" placeholder="Search..." aria-label="Search">
+ -->            </form>
+            </div>
+    
+            <div class=""> 
+                <a class="navbar-brand" href="../index.html">
+                <button class="close-editor" type="button" id="btn-back">
+                    <svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="as1mn15llu5e032u2pgzlc6yhvss2myk">
+                        <title id="as1mn15llu5e032u2pgzlc6yhvss2myk">Close the editor</title>
+                        <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z"></path>
+                    </svg>
+                </button>
+            </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!--Content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form class="mx-5 p-5" id="addPostForm" >
+                    <div class="border rounded bg-light p-5">
+                        <div class="form-group">
+                            <input type="texto" class="form-control w-50" id="coverUrl" placeholder="Add a cover image">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="New post title here...">
+                        </div>
+                        <div class="form-group pb-5">
+                          <input type="texto" class="form-control" id="content" placeholder="Write your post content here...">
+                        </div>
+                    </div>
+                    <input type="hidden" class="form-control" id="userId" placeholder="">
+                    <button type="button" class="btn" id="btnAddPost">Publish</button>                     
+                    <button type="button" class="btn" id="btnSaveDraft">Save draft</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="container my-footer col-12 justify-content-center">
+        <div class="my-footer-container">
+            <nav class="my-nav text-center">
+                <a class="item-menu-footer" href="">Home</a>
+                <a class="item-menu-footer" href="">Reading List</a>
+                <a class="item-menu-footer" href="">Listing</a>
+                <a class="item-menu-footer" href="">Podcast</a>
+                <a class="item-menu-footer" href="">Videos</a>
+                <a class="item-menu-footer" href="">Tags</a>
+                <a class="item-menu-footer" href="">Code of Conduct</a>
+                <a class="item-menu-footer" href="">FAQ</a>
+                <a class="item-menu-footer" href="">DEV Shop</a>
+                <a class="item-menu-footer" href="">Sponsors</a>
+                <a class="item-menu-footer" href="">About</a>
+                <a class="item-menu-footer" href="">Privacy Policy</a>
+                <a class="item-menu-footer" href="">Terms of use</a>
+                <a class="item-menu-footer" href="">Contact</a>
+                <a class="item-menu-footer" href=""><b>Write a post</b></a>
+                <div class="icons-footer">
+                    <a href=""><i class="fab fa-twitter item-icon-footer"></i></a>
+                    <a href=""><i class="fab fa-facebook-square item-icon-footer"></i></a>
+                    <a href=""><i class="fab fa-github item-icon-footer"></i></a>
+                    <a href=""><i class="fab fa-instagram item-icon-footer"></i></a>
+                    <a href=""><i class="fab fa-twitch item-icon-footer"></i></a>
+                </div>
+            </nav>
+            <hr class="divider d-none">
+            <p class="text-center"><a href="#" class="font-weight-bold">DEV Community</a> – A constructive and inclusive
+                social network for software developers. With you every step of your journey.</p>
+            <div>
+                <p class="text-center m-0"> Built on <a href="#" class="font-weight-bold">Forem</a> — the <a href="#"
+                        class="font-weight-bold">open source</a> software that <span>powers</span> <a href="#"
+                        class="font-weight-bold">DEV</a> and other inclusive communities.</p>
+                <p class="text-center"> Made with love and <a href="#" class="font-weight-bold">Ruby on Rails.</a> DEV
+                    Community ©️ 2016 - 2021.</p>
+                <img class="hojas-footer d-none d-md-block" src="../images/hojas_footer.jpg" alt="">
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/addPost.js"></script>
+</body>
+</html>
