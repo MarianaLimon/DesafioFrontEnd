@@ -26,6 +26,10 @@ a {
   margin-left: -60px;
 }
 
+.logo-navbar:hover {
+  cursor: pointer;
+}
+
 .navbar-toggler {
   border: none;
 }
@@ -210,8 +214,8 @@ a {
 }
 
 .my-card-article .avatar-post-comment .jb-img-avatar {
-  width: 25px !important;
-  height: 25px !important;
+  width: 32px !important;
+  height: 32px !important;
   margin-left: 0px;
   margin-right: 5px;
   margin-top: auto;
@@ -339,6 +343,153 @@ a {
 
 .my-card-article .likes a button:hover {
   background-color: #94999e;
+}
+
+.discussion {
+  padding: 0px 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .discussion {
+    padding: 0px 60px;
+  }
+}
+
+.discussion h3 {
+  font-size: 24px !important;
+}
+
+.discussion .btn-discussion {
+  color: #363d44 !important;
+  font-size: 14px !important;
+  padding: 6px 14px !important;
+  background-color: white !important;
+  border: solid #d2d6db 2px !important;
+  --shadow-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 5px !important;
+}
+
+.discussion .btn-discussion:hover {
+  color: #08090a;
+  background-color: #eef0f1;
+  border: solid #eef0f1 2px;
+}
+
+.discussion .add-discussion {
+  padding-bottom: 15px;
+}
+
+.discussion .add-discussion img {
+  width: 32px !important;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.discussion .add-discussion .textarea-box {
+  border-radius: 5px;
+  border: solid #b5bdc4 1px;
+  max-height: 40vh;
+  width: 80vw;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #f9fafa;
+}
+
+.discussion .add-discussion .textarea-box textarea {
+  height: 128px;
+  white-space: pre-wrap;
+  padding: 0.5em;
+  resize: vertical;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.discussion .add-discussion .textarea-aux {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .discussion .add-discussion .textarea-aux {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-top: solid #b5bdc4 1px;
+    padding: 10px;
+  }
+  .discussion .add-discussion .textarea-aux button {
+    background-color: transparent;
+    border: none;
+    color: #64707d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .discussion .add-discussion .textarea-aux button:hover {
+    color: #08090a;
+    background-color: #eef0f1;
+  }
+  .discussion .add-discussion .textarea-aux button:hover svg {
+    fill: #08090a;
+  }
+}
+
+.discussion .add-discussion .icon {
+  fill: #64707d;
+}
+
+.discussion .add-discussion .icon:hover {
+  fill: #08090a;
+}
+
+.discussion .textarea-buttons {
+  padding-bottom: 30px;
+  margin-left: 35px;
+}
+
+.discussion .textarea-buttons button {
+  font-size: 16px;
+  padding: 8px 17px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+}
+
+.discussion .textarea-buttons button.submit {
+  color: white;
+  background-color: #3b49df;
+}
+
+.discussion .textarea-buttons button:hover {
+  cursor: pointer;
+}
+
+.discussion .textarea-buttons button:hover.preview {
+  background-color: #d2d6db;
+}
+
+.discussion nav {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.discussion nav a, .discussion nav span {
+  font-size: 14px;
+  color: #74707d;
+  text-decoration: none;
+}
+
+.discussion nav:hover {
+  cursor: pointer;
 }
 
 /*aside*/
@@ -558,7 +709,7 @@ a {
 
 @media screen and (min-width: 992px) {
   .main-menu {
-    padding: .15rem 0;
+    padding: .35rem 0;
   }
   .main-menu .logo-navbar {
     margin-left: 0px;

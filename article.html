@@ -17,19 +17,19 @@
     <!--Menu Principal-->
     <nav class="navbar main-menu navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container px-0">
-            <button class="navbar-toggler px-0 d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler px-0 d-md-none" type="button" data-toggle="collapse" data-target="" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="images/logo_dev.png" alt="" class="logo-navbar"></a> 
-            <input class="form-control mr-sm-2 search-bar d-none d-md-block d-lg-none" type="search" placeholder="Search..." aria-label="Search">      
+            <!-- data-target="#navbarSupportedContent" -->
+            <img src="images/logo_dev.png" alt="" class="logo-navbar" id="btn-home">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 search-bar d-none d-lg-block" type="search" placeholder="Search..." aria-label="Search">
+                    <input id="search-bar" class="pl-2 mr-sm-2 ml-2 search-bar d-none d-lg-block" placeholder="Search...">
                 </form>
             </div>
     
             <div class="">
-                <button class="btn btn-top-bar my-2 my-sm-0 d-none d-md-inline-block" type="submit">Write a post</button>
+                <button class="btn btn-top-bar my-2 my-sm-0 d-none d-md-inline-block" type="submit" id="go-write-post">Write a post</button>
     
                 <a class="d-md-none pr-2" href="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img"
@@ -133,48 +133,14 @@
 
             <!-- Articles -->
             <div class="col-12 col-md-11 col-lg-8 px-0 px-lg-3 mb-3">
-                <!-- Nav Articles -->
+                
                 <!-- Articles -->
-                <div class="card my-card-article">
-                    <a href="">
-                        <img src="./images/js.png" class="card-img-top" alt="...">
-                    </a>
-                    <div class="div-title-articleFull-2 px-3 px-md-5">
-                        <!-- <a> -->
-                            <h1 class="title-articleFull-2">
-                                JavaScript Exercises - Conditional Statements
-                            </h1>
-                            <div class="mention-article-2 mt-2 mb-2">
-                                <a class="btn-mention-article bg-yellow" href="">#javascript</a>
-                                <a class="btn-mention-article bg-green" href="">#codenewble</a>
-                                <a class="btn-mention-article bg-blanco" href="">#programing</a>
-                            </div>
-                            <div class="text-avatar-comment d-flex align-items-center avatar-post-comment py-3">
-                                <a href=""><img class="rounded-circle border jb-img-avatar" src="https://res.cloudinary.com/practicaldev/image/fetch/s--3zbV9vqz--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/342525/21d42783-97b3-41d1-a778-d30c3120690a.jpg" alt="antdp425 profile" loading="lazy"></a>
-                                    <a href="" class="avatar-post-comment align-items-center d-flex">
-                                    <p class="f-14 mb-0 mr-2"><b>Renaissance</b></p>
-                                    <p class="f-12">18 hours ago</p>
-                                </a> 
-                            </div>
-                            <div class="text-article">
-                                <h2>Introduction</h2>
-                                <p>When you start by learning JavaScript programming basics, it can be quite hard to think of stuff to do to practice your code knowledge skills. Well, don't worry.</p>
-                                <p>I am going to give you a few coding exercises to practice your code skills. They won't be as hard for some of you, but for those that are only just starting to get into coding, these exercises will be super helpful. They will mainly consist of logical thinking and math solving. The point of this is to focus on the instructions that are given to you and following them.</p>
-                                <p>These tasks are going to be about conditional statements. You can think of this as your level one tasks.</p>
-                                <p>If you enjoy these tasks and want me to make some more levels, let me know so that I can bring them to you.</p>
-                                <h2>Task #1 - Speed Test</h2>
-                                <p>You need to write a function that receives an argument. This argument is going to be our speed. If our speed meets a certain condition, it should return a certain string.</p>
-                                <h2>Task #2 - Bonus Score</h2>
-                                <p>You will be given one number - your score. This score will get some bonus points if some conditions are met. You have to write a function which counts all the bonus points which this score gets and return the new score (your score + bonus points)</p>
-                                <h2>Task #3 - Time + 25</h2>
-                                <p>n this task, you have to write a function, which receives an array as an argument with two string numbers in it. The first number is the hours, and the second is the minutes. Our time will be in the 24-hour time clock. Our function will calculate what the time will be in 25 minutes.</p>
-                                <p>You have to make the strings into numbers. Your output for the hours should always be between 0-23 and your minutes should always be between 0-59. Your minutes should always be with two digits. This means that in some cases it should start with a 0.</p>
-                                <h2>Conclusion</h2>
-                                <p>These are the little fun exercises to practice your if statement skill. If you have any feedback or you need some help, be sure to comment down below. I'd be happy to chat and help! I hope you liked it and if you want me to do some more of these let me know.</p>
-                            </div>
-                       <!-- </a> -->
-                    </div>
+                <div class="card my-card-article" id="posts-wrapper">
+                    
+                    
                 </div>
+                
+                
             </div>
 
             <!-- Aside -->
@@ -268,7 +234,12 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/article.js"></script>
 </body>
 </html>

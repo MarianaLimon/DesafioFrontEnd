@@ -9,7 +9,7 @@ const savePosts = () => {
         url: "https://devto-74b4e-default-rtdb.firebaseio.com/posts/.json",
         data: JSON.stringify({
           postId: Date.now(),
-          userId: 2,
+          userId: 1,
           title: inputTitle,
           content: inputContent,
           creationDate: moment().format("l"),
@@ -19,7 +19,7 @@ const savePosts = () => {
         success: (response) => {
           console.log(response);
           $(`#addPostForm`)[0].reset();
-          
+          alert("Nuevo Post Añadido")
         },
         error: (error) => {
           console.log(error);
@@ -29,15 +29,11 @@ const savePosts = () => {
       alert("Llene los 3 campos antes de enviar")
     }
   };
-  $('#btnAddPost').click(savePosts)
-  //$('#btn-back').click($(location).attr('href','../index.html'))
 
-  const goHome = () => {
-    $(location).attr('href','../index.html')
-  }
-  
-$('#btn-back').click(goHome)
-$('.logo').click(goHome)
+$('#btnAddPost').click(savePosts)
 
-
-
+const goHome = () => {
+  $(location).attr("href", "../index.html")
+}
+$("#btn-home").click(goHome)
+$("#btn-back").click(goHome)
