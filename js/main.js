@@ -128,12 +128,23 @@ const getUser = (userId) => {
     }
     return newUser
 }
- 
+
+const getRepliesByPost = (postId) => {
+    let allReplies = Object.values(getReplies())
+    let newArrayFilter = allReplies.filter( item => {
+      return item.postId == postId
+    })
+    let tamaño = newArrayFilter.length
+    console.log(tamaño);
+    return newArrayFilter
+  }
+//$('#cant-replies').append(getRepliesByPost())
+
 const printPosts = (postsArray) => {
     postsArray.forEach((post, index) => {
-      //clean posts wrapper
-      //$('#posts-wrapper .card').remove();
+      
       let userInfo = getUser(post.data.userId);
+      let countReplice = getRepliesByPost(post.data.postId).length;
       let userContainerId = Date.now();
       let imgPost = "";
       if ((index + 1)  == postsArray.length){
@@ -172,7 +183,7 @@ const printPosts = (postsArray) => {
                         </a>
                         <a class="d-flex likes-hover align-items-end" href="">
                             <svg class="crayons-icon mb-1" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
-                            <h4 class="ml-1 mr-1">10 </h4>
+                            <h4 class="ml-1 mr-1" id="cant-replies"> ${countReplice} </h4>
                             <h3 class="mr-2">comments</h3>
                         </a>
                     </div>
@@ -185,8 +196,10 @@ const printPosts = (postsArray) => {
         </a>
         `
       );
-      //-----let repliesObject = printReplies(post.data.postId);
+      
+
     });
+    
   };
   printPosts(getPosts());
 
@@ -234,6 +247,7 @@ const goSearch = (event) => {
     event.stopPropagation();
 }
 $('#search-bar').keypress(goSearch)
+
 
 const goHome = () => {
     $(location).attr("href", "/index.html")

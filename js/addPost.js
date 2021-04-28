@@ -12,8 +12,8 @@ const savePosts = () => {
           userId: 1,
           title: inputTitle,
           content: inputContent,
-          creationDate: moment().format("l"),
-          creationTime: moment().format("LT"),
+          creationDate: moment().format("ll"),
+          creationTime: moment().startOf('hour').fromNow(),
           coverUrl: inputImg,
         }),
         success: (response) => {

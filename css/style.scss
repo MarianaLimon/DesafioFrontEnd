@@ -423,6 +423,11 @@ a{
             &.submit{
                 color: $Blanco;
                 background-color: $Azul;
+                &:hover{
+                    background-color: #323ebe !important;
+                    cursor: pointer;
+                    color: $Blanco;
+                } 
             }
             &:hover{
                 cursor: pointer;
@@ -940,10 +945,6 @@ a{
     }
 }
 
-
-
-
-
 .menu-left {
     margin-top: 40px;
     align-items: center;
@@ -1000,6 +1001,11 @@ a{
         font-size: 16px;
         padding: 8px 16px;
         margin-top: 20px;
+        &:hover{
+            background-color: #323ebe !important;
+            cursor: pointer;
+            color: $Blanco;
+        } 
     }
 
     #btnSaveDraft{
@@ -1024,3 +1030,38 @@ a{
         background: #F8F9FA;
     }
         
+    input:focus{
+        outline: 0 none;
+    }
+
+    .coment{
+        padding-bottom: 15px;
+        img{
+            width: 32px !important;
+            height: 32px;
+            border-radius: 50%;
+        }
+        .input-coment{
+            border-radius: 5px;
+            border: solid rgb(181,189,196) 1px;
+            max-height: 40vh;
+            width: 80vw;
+            margin-left: 5px;
+            margin-right: 5px;
+            background-color: $Blanco;
+            p{
+                &.name-user{
+                    color: #64707d;
+                    font-size: 16px;
+                    &.time{
+                        font-size: 14px;
+                    }
+                }
+                &.coment-content{
+                    font-size: 18px;
+                    color: #08090a;
+                    font-weight: 400;
+                }
+            }
+        }
+    }

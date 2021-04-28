@@ -469,6 +469,12 @@ a {
   background-color: #3b49df;
 }
 
+.discussion .textarea-buttons button.submit:hover {
+  background-color: #323ebe !important;
+  cursor: pointer;
+  color: white;
+}
+
 .discussion .textarea-buttons button:hover {
   cursor: pointer;
 }
@@ -1101,6 +1107,12 @@ a {
   margin-top: 20px;
 }
 
+#btnAddPost:hover {
+  background-color: #323ebe !important;
+  cursor: pointer;
+  color: white;
+}
+
 #btnSaveDraft {
   background-color: #B5BDC4 !important;
   color: black;
@@ -1121,5 +1133,44 @@ input#title.form-control {
 input#content.form-control {
   border: 0;
   background: #F8F9FA;
+}
+
+input:focus {
+  outline: 0 none;
+}
+
+.coment {
+  padding-bottom: 15px;
+}
+
+.coment img {
+  width: 32px !important;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.coment .input-coment {
+  border-radius: 5px;
+  border: solid #b5bdc4 1px;
+  max-height: 40vh;
+  width: 80vw;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: white;
+}
+
+.coment .input-coment p.name-user {
+  color: #64707d;
+  font-size: 16px;
+}
+
+.coment .input-coment p.name-user.time {
+  font-size: 14px;
+}
+
+.coment .input-coment p.coment-content {
+  font-size: 18px;
+  color: #08090a;
+  font-weight: 400;
 }
 /*# sourceMappingURL=style.css.map */
