@@ -89,14 +89,19 @@ const getUser = (userId) => {
   }
   return newUser;
 };
-//let otherData = getUsers()
-//console.log( otherData )
-  
+
 
 const printInnerPost = (data) => {
   let {userId, postId} = data;
   //console.log(data.content);
   let user = getUser(userId);
+
+  let likes = `${data.reactions}`;
+  let i =0
+
+  $( document ).ready(function() {
+    $("#likes").text(`${data.reactions}`);
+  });
     
   $("#posts-wrapper").append(
     `
@@ -173,7 +178,6 @@ const printInnerPost = (data) => {
     }
     getReplie()
     
-
     const saveNewReplie = () => {
       let inputComent = $('#coment').val()
       
@@ -199,19 +203,23 @@ const printInnerPost = (data) => {
         },
       });
     };
-
-    
     $('#btn-save-replie').click(saveNewReplie)
+
+
+    const reactions = () => {
+      i++
+      let totalLikes = parseInt(likes, 10) 
+      totalLikes = totalLikes + i 
+      $("#likes").text(totalLikes);
+    }
+    $("#btn-likes").click( reactions )
+
 };
 printInnerPost(getPost(postKey));
 
 
-const getLikes = () => {
-  let i = 0
-  i = i + 1 
-  $('#likes').append(i)
-}
-$('#btn-likes').click(getLikes())
+
+
 
 
 const goHome = () => {

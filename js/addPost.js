@@ -15,6 +15,7 @@ const savePosts = () => {
           creationDate: moment().format("ll"),
           creationTime: moment().startOf('hour').fromNow(),
           coverUrl: inputImg,
+          reactions: 0
         }),
         success: (response) => {
           console.log(response);
